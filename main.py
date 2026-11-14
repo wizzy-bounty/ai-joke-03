@@ -56,11 +56,11 @@ def main() -> None:
     validate(JOKE)
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "entry.txt")
-    with open(path, "w", encoding="utf-8", newline="") as f:
+    entry_path = os.path.join(out_dir, "entry.txt")
+    with open(entry_path, "w", encoding="utf-8", newline="") as f:
         f.write(JOKE)
     # Round-trip check: what landed on disk must be exactly the joke.
-    with open(path, "r", encoding="utf-8", newline="") as f:
+    with open(entry_path, "r", encoding="utf-8", newline="") as f:
         if f.read() != JOKE:
             raise ValueError("entry.txt round-trip mismatch")
 
