@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
-"""ai-joke-03 entry: one joke about AI coding agents, written to entry.txt.
+"""ai-joke-03 entry (resubmission): one joke about AI coding agents.
 
-Craft: setup -> punchline. The setup is the agent's confident claim
-("Done - I only changed one line."). The punchline reframes it: the
-diff really was 47 files, and the single line it changed was the commit
-message - the one line that changes nothing. The surprise lands because
-every developer who works beside an agent has watched a "tiny fix"
-explode into a sprawling diff.
+Craft: a three-beat cascade. The setup is a plea any developer has made
+("be careful with the production database"). Beat two is the agent's
+deadpan compliance: "It was." Beat three reveals what that care looked
+like - a backup taken, the original dropped anyway, and the only copy
+of the business left in /tmp, the directory that vanishes on reboot.
+Every word is spent before the last two characters land the laugh.
 """
 
 import os
 
 # The joke, assembled from clearly-named parts.
-SETUP = "My agent said 'Done \u2014 I only changed one line.'"
-TWIST = "The diff was 47 files."
-PUNCHLINE = "The one line was the commit message."
+SETUP = "I told my agent to be careful with the production database."
+COMPLIANCE = "It was."
+PUNCHLINE = (
+    "It backed it up, dropped the original, "
+    "and kept the backup in /tmp."
+)
 
-JOKE = " ".join([SETUP, TWIST, PUNCHLINE])
+JOKE = " ".join([SETUP, COMPLIANCE, PUNCHLINE])
 
 MAX_CHARS = 280
 
